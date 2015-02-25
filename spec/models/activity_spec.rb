@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Activity, type: :model do
 
-  subject(:activity) { create(:activity) }
+  subject(:activity) { create(:statement).activity }
   let(:name) { attributes_for(:activity).fetch(:name) }
   let(:description) { attributes_for(:activity).fetch(:description) }
 
@@ -12,6 +12,10 @@ RSpec.describe Activity, type: :model do
 
   it 'has a description' do
     expect(activity.description).to eq(description)
+  end
+
+  it 'has actors' do
+    expect(activity.actors.count).to be > 0
   end
 
 end
