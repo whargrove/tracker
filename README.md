@@ -27,31 +27,31 @@ Activity is tracked via Statements.
 Create a new Actor
 
 ````ruby
-    ron = Actor.new(name: 'Ron')
-    ron.save!
+ron = Actor.new(name: 'Ron')
+ron.save!
 ````
 
 Create a new Activity
 
 ````ruby
-    jogging = Activity.new(name: 'Jogging', description: 'A new fad')
-    jogging.save!
+jogging = Activity.new(name: 'Jogging', description: 'A new fad')
+jogging.save!
 ````
 
 Create a Statement with the actor and activity objects
 
 ````ruby
-    statement = Statement.new(actor: ron, activity: jogging)
-    statement.save!
+statement = Statement.new(actor: ron, activity: jogging)
+statement.save!
 ````
 
 Now you can see who did the activity through the Statement
 
 ````ruby
-    statement.actor.name
-    => "Ron"
-    statement.activity.name
-    => "Jogging"
-    statement.to_s
-    => "Ron went jogging."
+statement.actor.name
+=> "Ron"
+statement.activity.name
+=> "Jogging"
+statement.to_s
+=> "Ron went jogging."
 ````
